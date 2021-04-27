@@ -3,6 +3,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-URL_BEATS = os.getenv("URL_BEATS")
-URL_WATCH = os.getenv("URL_WATCH")
-ADMIN_ID = 732241058
+
+host = 'localhost'
+database = ''
+pg_user = ''
+pg_password = ''
+pg_uri = f'postgresql://{pg_user}:{pg_password}@{host}/{database}'
+
+
+ADMIN_ID = ''
